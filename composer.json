@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Morebec\\Collections\\": "src/"
+            "Morebec\\Validator\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Morebec\\Collections\\": "tests/"
+            "Tests\\Morebec\\Validator\\": "tests/"
         }
     }
 }
