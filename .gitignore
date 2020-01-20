@@ -1,0 +1,17 @@
+# Composer vendors
+/vendor/
+
+# PHPUnit
+phpunit.xml
+/phpunit.xml
+.phpunit.result.cache
+
+# PHP-CS-Fixer
+.php_cs.cache
+
+# Composer PHAR
+/composer.phar
+
+# Editors
+/.idea/
+/nbprojects/
