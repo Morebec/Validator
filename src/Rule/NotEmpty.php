@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: M1QN
- * Date: 03-Mar-20
- * Time: 18:33
- */
 
 namespace Morebec\Validator\Rule;
 
@@ -13,6 +7,17 @@ use Morebec\Validator\ValidationRuleInterface;
 
 class NotEmpty implements ValidationRuleInterface
 {
+    /**
+     * @var string|null
+     */
+    private $message;
+
+    public function __construct(
+        ?string $message = null
+    )
+    {
+        $this->message = $message;
+    }
 
     /**
      * Validates a value according to this rule and returns if it is valid or not
@@ -31,6 +36,6 @@ class NotEmpty implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return "The value '{$v}' was not expected to be empty";
+        return $this->message?:"The value of '{$v}' was not expected to be empty";
     }
 }
