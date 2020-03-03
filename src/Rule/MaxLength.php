@@ -14,7 +14,7 @@ class MaxLength implements ValidationRuleInterface
     private $length;
 
     /**
-     * @var int
+     * @var string
      */
     private $message;
 
