@@ -7,6 +7,17 @@ use Morebec\Validator\ValidationRuleInterface;
 
 class isUrl implements ValidationRuleInterface
 {
+    /**
+     * @var string|null
+     */
+    private $message;
+
+    public function __construct(
+        ?string $message = null
+    )
+    {
+        $this->message = $message;
+    }
 
     /**
      * Validates a value according to this rule and returns if it is valid or not
@@ -25,6 +36,6 @@ class isUrl implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return "'{$v}' was expected to be URL";
+        return $this->message?:"'{$v}' was expected to be an URL.";
     }
 }
