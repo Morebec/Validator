@@ -1,0 +1,36 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: M1QN
+ * Date: 03-Mar-20
+ * Time: 18:33
+ */
+
+namespace Morebec\Validator\Rule;
+
+
+use Morebec\Validator\ValidationRuleInterface;
+
+class NotEmpty implements ValidationRuleInterface
+{
+
+    /**
+     * Validates a value according to this rule and returns if it is valid or not
+     * @param mixed $v
+     * @return bool true if valid, otherwise false
+     */
+    public function validate($v): bool
+    {
+        return !empty($v);
+    }
+
+    /**
+     * Returns the message to be used in case the validation did not pass
+     * @param mixed $v the value that did not pass the validation
+     * @return string
+     */
+    public function getMessage($v): string
+    {
+        return "The value '{$v}' was not expected to be empty";
+    }
+}
