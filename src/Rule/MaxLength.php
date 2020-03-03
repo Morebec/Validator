@@ -13,18 +13,9 @@ class MaxLength implements ValidationRuleInterface
      */
     private $length;
 
-    /**
-     * @var int
-     */
-    private $message;
-
-    public function __construct(
-        int $length,
-        ?string $message = null
-    )
+    public function __construct(int $length)
     {
         $this->length = $length;
-        $this->message = $message;
     }
 
     /**
@@ -40,6 +31,6 @@ class MaxLength implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message?:"The length of '{$v}' was expected to be at most {$this->length} characters long";
+        return "The length of '{$v}' was expected to be at most {$this->length} characters long";
     }
 }
