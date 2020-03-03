@@ -5,15 +5,25 @@ namespace Morebec\Validator\Rule;
 
 use Morebec\Validator\ValidationRuleInterface;
 
-class InChoice implements ValidationRuleInterface
+class IsInChoice implements ValidationRuleInterface
 {
+    /**
+     * @var array<mixed>
+     */
     private $choice;
 
+    /**
+     * @var string|null
+     */
+    private $message;
+
     public function __construct(
-        array $choice
+        array $choice,
+        ?string $message = null
     )
     {
         $this->choice = $choice;
+        $this->message = $message;
     }
 
     /**
@@ -33,6 +43,6 @@ class InChoice implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return "Variable '{$v}' was expected to be inside choice array";
+        return $this->message?:"Value '{$v}' was expected to be one in ["  . implode(' , ', $this->choice)  . "]";
     }
 }
