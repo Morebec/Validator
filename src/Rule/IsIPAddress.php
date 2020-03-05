@@ -30,7 +30,7 @@ class IsIPAddress implements ValidationRuleInterface
      */
     public function validate($v): bool
     {
-        return filter_var($v, FILTER_VALIDATE_EMAIL) !== false;
+        return filter_var($v, FILTER_VALIDATE_IP) !== false;
     }
 
     /**
