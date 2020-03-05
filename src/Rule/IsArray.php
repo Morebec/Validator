@@ -11,12 +11,12 @@ use Morebec\Validator\ValidationRuleInterface;
 class IsArray implements ValidationRuleInterface
 {
     /**
-     * @var string
+     * @var string | null
      */
     private $message;
 
     /**
-     * IsEmail constructor.
+     * IsArray constructor.
      * @param string|null $message
      */
     public function __construct(string $message = null)
