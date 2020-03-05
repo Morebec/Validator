@@ -11,6 +11,19 @@ use Morebec\Validator\ValidationRuleInterface;
 class IsArray implements ValidationRuleInterface
 {
     /**
+     * @var string
+     */
+    private $message;
+
+    /**
+     * IsEmail constructor.
+     * @param string|null $message
+     */
+    public function __construct(string $message = null)
+    {
+        $this->message = $message;
+    }
+    /**
      * @inheritDoc
      */
     public function validate($v): bool
@@ -23,6 +36,6 @@ class IsArray implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return "The value '{$v}' was expected to be an array";
+        return $this->message ?: "The value '{$v}' was expected to be an array";
     }
 }
