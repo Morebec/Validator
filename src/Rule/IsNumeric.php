@@ -7,6 +7,16 @@ use Morebec\Validator\ValidationRuleInterface;
 class IsNumeric implements ValidationRuleInterface
 {
     /**
+     * @var string|null
+     */
+    private $message;
+
+    public function __construct(?string $message = null)
+    {
+        $this->message = $message;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function validate($v): bool
@@ -19,6 +29,6 @@ class IsNumeric implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return "The value '{$v}' was expected be numeric";
+        return $this->message ?: "The value '{$v}' was expected be numeric";
     }
 }
