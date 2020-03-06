@@ -3,6 +3,7 @@
 
 namespace Morebec\Validator\Rule;
 
+
 use Morebec\Validator\ValidationRuleInterface;
 
 /**
@@ -11,7 +12,7 @@ use Morebec\Validator\ValidationRuleInterface;
 class IsArray implements ValidationRuleInterface
 {
     /**
-     * @var string | null
+     * @var string|null
      */
     private $message;
 
@@ -19,7 +20,7 @@ class IsArray implements ValidationRuleInterface
      * IsArray constructor.
      * @param string|null $message
      */
-    public function __construct(string $message = null)
+    public function __construct(?string $message = null)
     {
         $this->message = $message;
     }
