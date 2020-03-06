@@ -12,7 +12,7 @@ use Morebec\Validator\ValidationRuleInterface;
 class IsIPAddress implements ValidationRuleInterface
 {
     /**
-     * @var string
+     * @var string|null
      */
     private $message;
 
