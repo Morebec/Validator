@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: M1QN
- * Date: 06-Mar-20
- * Time: 18:18
- */
 
 namespace Morebec\Validator\Rule;
 
@@ -14,12 +8,12 @@ use Morebec\Validator\ValidationRuleInterface;
 class ContainsLowercaseCharacters implements ValidationRuleInterface
 {
     /**
-     * @var int|null
+     * @var int
      */
     private $numberCharacters;
 
     /**
-     * @var bool|null
+     * @var bool
      */
     private $strict;
 

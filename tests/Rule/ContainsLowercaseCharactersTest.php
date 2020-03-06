@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: M1QN
- * Date: 06-Mar-20
- * Time: 18:26
- */
 
 namespace Tests\Morebec\Validator\Rule;
 use Morebec\Validator\Rule\ContainsLowercaseCharacters;
