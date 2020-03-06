@@ -3,6 +3,7 @@
 
 namespace Morebec\Validator\Rule;
 
+
 use Morebec\Validator\ValidationRuleInterface;
 
 /**
@@ -10,6 +11,19 @@ use Morebec\Validator\ValidationRuleInterface;
  */
 class IsArray implements ValidationRuleInterface
 {
+    /**
+     * @var string|null
+     */
+    private $message;
+
+    /**
+     * IsArray constructor.
+     * @param string|null $message
+     */
+    public function __construct(?string $message = null)
+    {
+        $this->message = $message;
+    }
     /**
      * @inheritDoc
      */
@@ -23,6 +37,6 @@ class IsArray implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return "The value '{$v}' was expected to be an array";
+        return $this->message ?: "The value '{$v}' was expected to be an array";
     }
 }
