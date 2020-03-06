@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: M1QN
- * Date: 06-Mar-20
- * Time: 18:08
- */
 
 namespace Tests\Morebec\Validator\Rule;
 

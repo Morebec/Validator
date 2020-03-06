@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: M1QN
- * Date: 06-Mar-20
- * Time: 17:52
- */
 
 namespace Morebec\Validator\Rule;
 
@@ -13,10 +7,26 @@ use Morebec\Validator\ValidationRuleInterface;
 
 class ContainsUppercaseCharacters implements ValidationRuleInterface
 {
+    /**
+     * @var int
+     */
     private $numberCharacters;
+
+    /**
+     * @var bool
+     */
     private $strict;
+    /**
+     * @var string|null
+     */
     private $message;
 
+    /**
+     * ContainsUppercaseCharacters constructor.
+     * @param int|null $numberCharacters
+     * @param bool|null $strict
+     * @param string|null $message
+     */
     public function __construct(
         ?int $numberCharacters = 1,
         ?bool $strict = false,
@@ -61,7 +71,12 @@ class ContainsUppercaseCharacters implements ValidationRuleInterface
         }
     }
 
-    private function countUpperCase(string $message){
+    /**
+     * @param string $message
+     * @return int
+     */
+    private function countUpperCase(string $message): int
+    {
         $lowerCase = strtolower($message);
         $similar = similar_text($message, $lowerCase);
         return strlen($message)-$similar;
