@@ -10,6 +10,16 @@ use Morebec\Validator\ValidationRuleInterface;
 class IsBoolean implements ValidationRuleInterface
 {
     /**
+     * @var string|null
+     */
+    private $message;
+
+    public function __construct(?string $message = null)
+    {
+        $this->message = $message;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function validate($v): bool
@@ -22,6 +32,6 @@ class IsBoolean implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return "The value '{$v}' was expected to be a boolean";
+        return $this->message ?: "The value '{$v}' was expected to be a boolean";
     }
 }
