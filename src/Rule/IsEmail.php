@@ -10,14 +10,14 @@ use Morebec\Validator\ValidationRuleInterface;
 class IsEmail implements ValidationRuleInterface
 {
     /**
-     * @var string
+     * @var string|null
      */
     private $message;
 
     /**
      * IsEmail constructor.
      */
-    public function __construct(string $message = null)
+    public function __construct(?string $message = null)
     {
         $this->message = $message;
     }
@@ -35,6 +35,6 @@ class IsEmail implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "The value $v to not a valid email address";
+        return $this->message ?: "The value '{$v}' was expected to be a valid email address";
     }
 }

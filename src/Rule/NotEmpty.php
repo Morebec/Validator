@@ -11,9 +11,8 @@ class NotEmpty implements ValidationRuleInterface
      */
     private $message;
 
-    public function __construct(
-        ?string $message = null
-    ) {
+    public function __construct(?string $message = null)
+    {
         $this->message = $message;
     }
 
@@ -36,6 +35,6 @@ class NotEmpty implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "The value of '{$v}' was not expected to be empty";
+        return $this->message ?: "The value '{$v}' was not expected to be empty";
     }
 }

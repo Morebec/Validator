@@ -19,6 +19,6 @@ class IsNumeric implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return "THe value '{$v}' was expected be numeric";
+        return "The value '{$v}' was expected be numeric";
     }
 }

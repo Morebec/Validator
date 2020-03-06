@@ -14,9 +14,6 @@ class IsIPAddress implements ValidationRuleInterface
      */
     private $message;
 
-    /**
-     * IsIpAddress constructor.
-     */
     public function __construct(?string $message = null)
     {
         $this->message = $message;
@@ -35,6 +32,6 @@ class IsIPAddress implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "The value '$v' was expected to be a string";
+        return $this->message ?: "The value '{$v}' was expected to be a valid IP address";
     }
 }

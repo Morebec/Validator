@@ -13,6 +13,7 @@ class Callback implements ValidationRuleInterface
      * @var \Closure
      */
     private $closure;
+
     /**
      * @var string
      */

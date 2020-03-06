@@ -16,10 +16,8 @@ class IsInChoice implements ValidationRuleInterface
      */
     private $message;
 
-    public function __construct(
-        array $choice,
-        ?string $message = null
-    ) {
+    public function __construct(array $choice, ?string $message = null)
+    {
         $this->choice = $choice;
         $this->message = $message;
     }
@@ -43,6 +41,6 @@ class IsInChoice implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "Value '{$v}' was expected to be one in [".implode(' , ', $this->choice).']';
+        return $this->message ?: "The value '{$v}' was expected to be one in [".implode(', ', $this->choice).']';
     }
 }

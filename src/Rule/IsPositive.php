@@ -14,7 +14,7 @@ class IsPositive implements ValidationRuleInterface
     /**
      * Positive constructor.
      */
-    public function __construct(string $message = null)
+    public function __construct(?string $message = null)
     {
         $this->message = $message;
     }
@@ -32,6 +32,6 @@ class IsPositive implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "Expected value $v to be positive";
+        return $this->message ?: "The value '{$v}' was expected to be a positive number";
     }
 }

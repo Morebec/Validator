@@ -11,9 +11,8 @@ class IsUrl implements ValidationRuleInterface
      */
     private $message;
 
-    public function __construct(
-        ?string $message = null
-    ) {
+    public function __construct(?string $message = null)
+    {
         $this->message = $message;
     }
 
@@ -36,6 +35,6 @@ class IsUrl implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "'{$v}' was expected to be an URL.";
+        return $this->message ?: "The value '{$v}' was expected to be a valid URL.";
     }
 }

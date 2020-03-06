@@ -32,6 +32,6 @@ class Blank implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "The value '$v' was expected not to be blank";
+        return $this->message ?: "The value '$v' was expected to be blank";
     }
 }

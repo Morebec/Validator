@@ -29,6 +29,6 @@ class IsNotNull implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message ?: 'the value was expected not to be null';
+        return $this->message ?: "The value '{$v}' was not expected to be null";
     }
 }

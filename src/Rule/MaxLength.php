@@ -12,14 +12,12 @@ class MaxLength implements ValidationRuleInterface
     private $length;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $message;
 
-    public function __construct(
-        int $length,
-        ?string $message = null
-    ) {
+    public function __construct(int $length, ?string $message = null)
+    {
         $this->length = $length;
         $this->message = $message;
     }
