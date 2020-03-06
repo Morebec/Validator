@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class BlankTest extends TestCase
 {
-
     public function testValidate()
     {
         $rule = new Blank();

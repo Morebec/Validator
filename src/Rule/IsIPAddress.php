@@ -1,13 +1,11 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
 /**
- * Validates that a value is an Ip Address
+ * Validates that a value is an Ip Address.
  */
 class IsIPAddress implements ValidationRuleInterface
 {
@@ -18,7 +16,6 @@ class IsIPAddress implements ValidationRuleInterface
 
     /**
      * IsIpAddress constructor.
-     * @param string|null $message
      */
     public function __construct(?string $message = null)
     {
@@ -26,7 +23,7 @@ class IsIPAddress implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
@@ -34,7 +31,7 @@ class IsIPAddress implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {

@@ -1,12 +1,11 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
 
 use Morebec\Validator\ValidationRuleInterface;
 
 /**
- * Validation to execute a custom callback
+ * Validation to execute a custom callback.
  */
 class Callback implements ValidationRuleInterface
 {
@@ -21,8 +20,6 @@ class Callback implements ValidationRuleInterface
 
     /**
      * Callback constructor.
-     * @param \Closure $closure
-     * @param string $message
      */
     public function __construct(\Closure $closure, string $message)
     {
@@ -31,16 +28,17 @@ class Callback implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
         $closure = $this->closure;
+
         return $closure($v);
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {

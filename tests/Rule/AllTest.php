@@ -14,7 +14,7 @@ class AllTest extends TestCase
         // A Numeric positive number
         $rule = new All([
             new IsNumeric(),
-            new IsPositiveOrZero()
+            new IsPositiveOrZero(),
         ]);
 
         $this->assertTrue($rule->validate(9));

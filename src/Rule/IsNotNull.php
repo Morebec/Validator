@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
@@ -19,7 +17,7 @@ class IsNotNull implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
@@ -27,7 +25,7 @@ class IsNotNull implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {

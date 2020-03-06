@@ -1,13 +1,11 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
 /**
- * Validates that a value is blank
+ * Validates that a value is blank.
  */
 class Blank implements ValidationRuleInterface
 {
@@ -22,7 +20,7 @@ class Blank implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
@@ -30,7 +28,7 @@ class Blank implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {

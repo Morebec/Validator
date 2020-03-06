@@ -1,13 +1,11 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
 /**
- * Validates that a value is an array
+ * Validates that a value is an array.
  */
 class IsArray implements ValidationRuleInterface
 {
@@ -18,22 +16,22 @@ class IsArray implements ValidationRuleInterface
 
     /**
      * IsArray constructor.
-     * @param string|null $message
      */
     public function __construct(?string $message = null)
     {
         $this->message = $message;
     }
+
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
-        return is_array($v);
+        return \is_array($v);
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {

@@ -2,13 +2,11 @@
 
 namespace Rule;
 
-
 use Morebec\Validator\Rule\IsEmail;
 use PHPUnit\Framework\TestCase;
 
 class IsEmailTest extends TestCase
 {
-
     public function testValidate()
     {
         $rule = new IsEmail();

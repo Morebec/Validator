@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class IsBooleanTest extends TestCase
 {
-
     public function testValidate()
     {
         $rule = new IsBoolean();

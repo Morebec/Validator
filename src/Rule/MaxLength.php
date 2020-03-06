@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
@@ -21,25 +19,24 @@ class MaxLength implements ValidationRuleInterface
     public function __construct(
         int $length,
         ?string $message = null
-    )
-    {
+    ) {
         $this->length = $length;
         $this->message = $message;
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
-        return strlen($v) <= $this->length;
+        return \strlen($v) <= $this->length;
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {
-        return $this->message?:"The length of '{$v}' was expected to be at most {$this->length} characters long";
+        return $this->message ?: "The length of '{$v}' was expected to be at most {$this->length} characters long";
     }
 }

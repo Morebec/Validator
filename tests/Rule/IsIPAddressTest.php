@@ -2,13 +2,11 @@
 
 namespace Rule;
 
-
 use Morebec\Validator\Rule\IsIPAddress;
 use PHPUnit\Framework\TestCase;
 
 class IsIPAddressTest extends TestCase
 {
-
     public function testValidate()
     {
         $rule = new IsIPAddress();

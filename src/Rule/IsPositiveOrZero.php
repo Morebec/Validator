@@ -17,7 +17,7 @@ class IsPositiveOrZero implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
@@ -25,7 +25,7 @@ class IsPositiveOrZero implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {

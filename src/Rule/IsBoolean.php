@@ -1,26 +1,24 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
 /**
- * Validates that a value is a boolean
+ * Validates that a value is a boolean.
  */
 class IsBoolean implements ValidationRuleInterface
 {
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
-        return is_bool($v);
+        return \is_bool($v);
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {

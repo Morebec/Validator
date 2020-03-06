@@ -2,10 +2,9 @@
 
 namespace Morebec\Validator\Rule;
 
-
 use Morebec\Validator\ValidationRuleInterface;
 
-class isUrl implements ValidationRuleInterface
+class IsUrl implements ValidationRuleInterface
 {
     /**
      * @var string|null
@@ -14,14 +13,15 @@ class isUrl implements ValidationRuleInterface
 
     public function __construct(
         ?string $message = null
-    )
-    {
+    ) {
         $this->message = $message;
     }
 
     /**
-     * Validates a value according to this rule and returns if it is valid or not
+     * Validates a value according to this rule and returns if it is valid or not.
+     *
      * @param mixed $v
+     *
      * @return bool true if valid, otherwise false
      */
     public function validate($v): bool
@@ -30,12 +30,12 @@ class isUrl implements ValidationRuleInterface
     }
 
     /**
-     * Returns the message to be used in case the validation did not pass
+     * Returns the message to be used in case the validation did not pass.
+     *
      * @param mixed $v the value that did not pass the validation
-     * @return string
      */
     public function getMessage($v): string
     {
-        return $this->message?:"'{$v}' was expected to be an URL.";
+        return $this->message ?: "'{$v}' was expected to be an URL.";
     }
 }
