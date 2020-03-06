@@ -16,7 +16,7 @@ class IsUrlTest extends TestCase
         $this->assertFalse($rule->validate('a'));
 
         $this->assertEquals(
-            "'d' was expected to be an URL.",
+            "The value 'd' was expected to be a valid URL.",
             $rule->getMessage('d')
         );
 

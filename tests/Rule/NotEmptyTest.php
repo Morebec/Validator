@@ -14,6 +14,6 @@ class NotEmptyTest extends TestCase
         $this->assertFalse($rule->validate([]));
         $ruleSecond = new NotEmpty('Custom message');
         $this->assertEquals('Custom message', $ruleSecond->getMessage('arr'));
-        $this->assertEquals("The value of 'arr' was not expected to be empty", $rule->getMessage('arr'));
+        $this->assertEquals("The value 'arr' was not expected to be empty", $rule->getMessage('arr'));
     }
 }

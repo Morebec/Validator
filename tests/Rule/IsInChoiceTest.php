@@ -15,7 +15,7 @@ class IsInChoiceTest extends TestCase
         $this->assertFalse($rule->validate('d'));
 
         $this->assertEquals(
-            "Value 'd' was expected to be one in [a , b , c]",
+            "The value 'd' was expected to be one in [a, b, c]",
             $rule->getMessage('d')
         );
         $this->assertEquals(
