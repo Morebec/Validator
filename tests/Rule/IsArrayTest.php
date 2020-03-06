@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class IsArrayTest extends TestCase
 {
-
     public function testValidate()
     {
         $rule = new IsArray();

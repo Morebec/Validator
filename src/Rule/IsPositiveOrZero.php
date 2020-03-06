@@ -7,17 +7,17 @@ use Morebec\Validator\ValidationRuleInterface;
 class IsPositiveOrZero implements ValidationRuleInterface
 {
     /**
-     * @var string
+     * @var string|null
      */
     private $message;
 
-    public function __construct(string $message = null)
+    public function __construct(?string $message = null)
     {
         $this->message = $message;
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
@@ -25,10 +25,10 @@ class IsPositiveOrZero implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "The value {$v} was expected to be positive or zero";
+        return $this->message ?: "The value '{$v}' was expected to be positive number or zero";
     }
 }

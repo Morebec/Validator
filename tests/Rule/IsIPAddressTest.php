@@ -2,17 +2,17 @@
 
 namespace Rule;
 
-use Morebec\Validator\Rule\IsEmail;
+use Morebec\Validator\Rule\IsIPAddress;
 use PHPUnit\Framework\TestCase;
 
-class IsEmailTest extends TestCase
+class IsIPAddressTest extends TestCase
 {
     public function testValidate()
     {
-        $rule = new IsEmail();
-        $this->assertTrue($rule->validate('email@domain.com'));
-        $this->assertFalse($rule->validate('@domain.com'));
-        $this->assertFalse($rule->validate('email.domain.com'));
+        $rule = new IsIPAddress();
+        $this->assertTrue($rule->validate('192.168.1.1'));
+        $this->assertFalse($rule->validate('275.265.11.1'));
+        $this->assertFalse($rule->validate('test'));
         $this->assertFalse($rule->validate('domain.com'));
         $this->assertFalse($rule->validate(true));
         $this->assertFalse($rule->validate(false));

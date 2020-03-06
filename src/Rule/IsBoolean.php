@@ -1,29 +1,37 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
 /**
- * Validates that a value is a boolean
+ * Validates that a value is a boolean.
  */
 class IsBoolean implements ValidationRuleInterface
 {
     /**
-     * @inheritDoc
+     * @var string|null
      */
-    public function validate($v): bool
+    private $message;
+
+    public function __construct(?string $message = null)
     {
-        return is_bool($v);
+        $this->message = $message;
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
+     */
+    public function validate($v): bool
+    {
+        return \is_bool($v);
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {
-        return "The value '{$v}' was expected to be a boolean";
+        return $this->message ?: "The value '{$v}' was expected to be a boolean";
     }
 }
