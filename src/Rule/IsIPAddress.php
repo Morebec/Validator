@@ -4,7 +4,10 @@ namespace Morebec\Validator\Rule;
 
 use Morebec\Validator\ValidationRuleInterface;
 
-class IsNumeric implements ValidationRuleInterface
+/**
+ * Validates that a value is an Ip Address.
+ */
+class IsIPAddress implements ValidationRuleInterface
 {
     /**
      * @var string|null
@@ -21,7 +24,7 @@ class IsNumeric implements ValidationRuleInterface
      */
     public function validate($v): bool
     {
-        return is_numeric($v);
+        return filter_var($v, FILTER_VALIDATE_IP) !== false;
     }
 
     /**
@@ -29,6 +32,6 @@ class IsNumeric implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "The value '{$v}' was expected be numeric";
+        return $this->message ?: "The value '{$v}' was expected to be a valid IP address";
     }
 }

@@ -1,12 +1,11 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
 
 use Morebec\Validator\ValidationRuleInterface;
 
 /**
- * Helper compound rule to specify only a single rule
+ * Helper compound rule to specify only a single rule.
  */
 class One extends AbstractCompoundRule
 {
@@ -22,7 +21,7 @@ class One extends AbstractCompoundRule
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
@@ -30,16 +29,13 @@ class One extends AbstractCompoundRule
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {
         return $this->message ?: $this->getRule()->getMessage($v);
     }
 
-    /**
-     * @return ValidationRuleInterface
-     */
     private function getRule(): ValidationRuleInterface
     {
         return $this->rules[0];

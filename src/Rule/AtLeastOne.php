@@ -1,13 +1,11 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
 /**
- * Make sure at least one rule is valid
+ * Make sure at least one rule is valid.
  */
 class AtLeastOne extends AbstractCompoundRule
 {
@@ -23,17 +21,17 @@ class AtLeastOne extends AbstractCompoundRule
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
         /** @var ValidationRuleInterface $rule */
         foreach ($this->rules as $rule) {
-            if($rule->validate($v)) {
+            if ($rule->validate($v)) {
                 return true;
             }
 
-            if(!$this->message) {
+            if (!$this->message) {
                 $this->message = $rule->getMessage($v);
             }
         }
@@ -42,7 +40,7 @@ class AtLeastOne extends AbstractCompoundRule
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {

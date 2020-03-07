@@ -2,7 +2,6 @@
 
 namespace Tests\Morebec\Validator\Rule;
 
-
 use Morebec\Validator\Rule\MaxLength;
 use PHPUnit\Framework\TestCase;
 

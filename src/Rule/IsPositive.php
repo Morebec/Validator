@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
@@ -15,15 +13,14 @@ class IsPositive implements ValidationRuleInterface
 
     /**
      * Positive constructor.
-     * @param string|null $message
      */
-    public function __construct(string $message = null)
+    public function __construct(?string $message = null)
     {
         $this->message = $message;
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
@@ -31,10 +28,10 @@ class IsPositive implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "Expected value $v to be positive";
+        return $this->message ?: "The value '{$v}' was expected to be a positive number";
     }
 }

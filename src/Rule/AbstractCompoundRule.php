@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
@@ -15,6 +13,7 @@ abstract class AbstractCompoundRule implements ValidationRuleInterface
 
     /**
      * AbstractCompoundRule constructor.
+     *
      * @param ValidationRuleInterface[] $rules
      */
     public function __construct(array $rules)

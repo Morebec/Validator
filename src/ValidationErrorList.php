@@ -1,15 +1,15 @@
 <?php
 
-
 namespace Morebec\Validator;
 
 /**
- * Represents a list of validation errors
+ * Represents a list of validation errors.
  */
 class ValidationErrorList
 {
     /** @var ValidationError[] */
     private $errors;
+
     /**
      * ValidationErrorList constructor.
      */
@@ -19,8 +19,8 @@ class ValidationErrorList
     }
 
     /**
-     * Adds an error to this list
-     * @param string $message
+     * Adds an error to this list.
+     *
      * @param mixed $value
      */
     public function addError(string $message, $value): void
@@ -29,8 +29,7 @@ class ValidationErrorList
     }
 
     /**
-     * Indicates if it contains errors
-     * @return bool
+     * Indicates if it contains errors.
      */
     public function hasErrors(): bool
     {
@@ -38,7 +37,8 @@ class ValidationErrorList
     }
 
     /**
-     * Returns the list of errors
+     * Returns the list of errors.
+     *
      * @return ValidationError[]
      */
     public function getErrors(): array
@@ -47,10 +47,9 @@ class ValidationErrorList
     }
 
     /**
-     * Merges another array of errors to this list
-     * @param ValidationErrorList $errors
+     * Merges another array of errors to this list.
      */
-    public function merge(ValidationErrorList $errors): void
+    public function merge(self $errors): void
     {
         $this->errors = array_merge($this->errors, $errors->getErrors());
     }
