@@ -1,6 +1,7 @@
 <?php
 
 namespace Tests\Morebec\Validator\Rule;
+use InvalidArgumentException;
 use Morebec\Validator\Rule\ContainsNumericCharacters;
 use PHPUnit\Framework\TestCase;
 
@@ -15,5 +16,7 @@ class ContainsNumericCharactersTest extends TestCase
         $this->assertFalse($ruleSecond->validate('test string'));
         $this->assertTrue($ruleSecond->validate('test string 12'));
         $this->assertEquals( "Custom Message", $ruleThird->getMessage("test string"));
+        $this->expectException(InvalidArgumentException::class);
+        $ruleForth = new ContainsNumericCharacters(-1,true);
     }
 }

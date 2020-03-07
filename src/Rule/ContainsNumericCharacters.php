@@ -3,6 +3,7 @@
 namespace Morebec\Validator\Rule;
 
 
+use InvalidArgumentException;
 use Morebec\Validator\ValidationRuleInterface;
 
 class ContainsNumericCharacters implements ValidationRuleInterface
@@ -22,16 +23,18 @@ class ContainsNumericCharacters implements ValidationRuleInterface
 
     /**
      * ContainsNumericCharacters constructor.
-     * @param int|null $numberCharacters
-     * @param bool|null $strict
+     * @param int $numberCharacters
+     * @param bool $strict
      * @param string|null $message
      */
     public function __construct(
-        ?int $numberCharacters = 1,
-        ?bool $strict = false,
+        int $numberCharacters,
+        bool $strict,
         ?string $message = null
     )
     {
+        if($numberCharacters<0)
+            throw new InvalidArgumentException();
         $this->numberCharacters = $numberCharacters;
         $this->strict = $strict;
         $this->message = $message;
@@ -47,9 +50,8 @@ class ContainsNumericCharacters implements ValidationRuleInterface
         if($this->strict){
             return $this->countDigits($v)<=$this->numberCharacters;
         }
-        else{
-            return $this->countDigits($v)>=$this->numberCharacters;
-        }
+        return $this->countDigits($v)>=$this->numberCharacters;
+
     }
 
     /**
@@ -62,12 +64,10 @@ class ContainsNumericCharacters implements ValidationRuleInterface
         if($this->message){
             return $this->message;
         }
-        else if($this->strict){
+        if($this->strict){
             return "Number of numeric characters exceeds ".${$this->numberCharacters};
         }
-        else{
-            return "Number of numeric characters should exceed ".${$this->numberCharacters};
-        }
+        return "Number of numeric characters should exceed ".${$this->numberCharacters};
     }
 
     /**
