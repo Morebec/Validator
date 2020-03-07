@@ -3,6 +3,7 @@
 namespace Morebec\Validator\Rule;
 
 
+use InvalidArgumentException;
 use Morebec\Validator\ValidationRuleInterface;
 
 class ContainsLowercaseCharacters implements ValidationRuleInterface
@@ -24,16 +25,18 @@ class ContainsLowercaseCharacters implements ValidationRuleInterface
 
     /**
      * ContainsLowercaseCharacters constructor.
-     * @param int|null $numberCharacters
-     * @param bool|null $strict
+     * @param int $numberCharacters
+     * @param bool $strict
      * @param string|null $message
      */
     public function __construct(
-        ?int $numberCharacters = 1,
-        ?bool $strict = false,
+        int $numberCharacters,
+        bool $strict,
         ?string $message = null
     )
     {
+        if($numberCharacters<0)
+            throw new InvalidArgumentException();
         $this->numberCharacters = $numberCharacters;
         $this->strict = $strict;
         $this->message = $message;
@@ -49,9 +52,7 @@ class ContainsLowercaseCharacters implements ValidationRuleInterface
         if($this->strict){
             return $this->countLowerCase($v)<=$this->numberCharacters;
         }
-        else{
-            return $this->countLowerCase($v)>=$this->numberCharacters;
-        }
+        return $this->countLowerCase($v)>=$this->numberCharacters;
     }
 
     /**
@@ -64,12 +65,10 @@ class ContainsLowercaseCharacters implements ValidationRuleInterface
         if($this->message){
             return $this->message;
         }
-        else if($this->strict){
+        if($this->strict){
             return "Number of lowercase characters exceeds ".${$this->numberCharacters};
         }
-        else{
-            return "Number of lowercase characters should exceed ".${$this->numberCharacters};
-        }
+        return "Number of lowercase characters should exceed ".${$this->numberCharacters};
     }
 
     /**
