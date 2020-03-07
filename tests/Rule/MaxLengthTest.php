@@ -4,7 +4,9 @@ namespace Tests\Morebec\Validator\Rule;
 
 
 use Morebec\Validator\Rule\MaxLength;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+
 
 class MaxLengthTest extends TestCase
 {
@@ -22,5 +24,7 @@ class MaxLengthTest extends TestCase
             "Custom message",
             $secondRule->getMessage("arr")
         );
+        $this->expectException(InvalidArgumentException::class);
+        $thirdRule = new MaxLength(-1);
     }
 }
