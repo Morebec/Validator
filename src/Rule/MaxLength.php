@@ -35,6 +35,6 @@ class MaxLength implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "The length of '{$v}' was expected to be at most {$this->length} characters long";
+        return $this->message?:"The length of '{$v}' was expected to be at most {$this->length} characters long";
     }
 }
