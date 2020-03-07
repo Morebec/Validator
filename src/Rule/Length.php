@@ -3,7 +3,6 @@
 namespace Morebec\Validator\Rule;
 
 
-use InvalidArgumentException;
 use Morebec\Validator\ValidationRuleInterface;
 
 class Length implements ValidationRuleInterface
@@ -27,8 +26,6 @@ class Length implements ValidationRuleInterface
         ?string $message = null
     )
     {
-        if ($length<0)
-            throw new InvalidArgumentException();
         $this->length = $length;
         $this->message = $message;
     }
@@ -40,7 +37,7 @@ class Length implements ValidationRuleInterface
      */
     public function validate($v): bool
     {
-        return strlen($v) === $this->length;
+        return strlen($v) == $this->length;
     }
 
     /**
@@ -50,6 +47,6 @@ class Length implements ValidationRuleInterface
      */
     public function getMessage($v): string
     {
-        return $this->message?:"'${$v}' is expected to be exactly ".$this->length." characters long";
+        return $this->message?:"'${$v}' is supposed to be exactly ".$this->length." characters long";
     }
 }
