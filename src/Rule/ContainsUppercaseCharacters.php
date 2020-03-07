@@ -51,9 +51,7 @@ class ContainsUppercaseCharacters implements ValidationRuleInterface
         if($this->strict){
             return $this->countUpperCase($v)<=$this->numberCharacters;
         }
-        else{
-            return $this->countUpperCase($v)>=$this->numberCharacters;
-        }
+        return $this->countUpperCase($v)>=$this->numberCharacters;
     }
 
     /**
