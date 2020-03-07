@@ -1,10 +1,9 @@
 <?php
 
-
 namespace Morebec\Validator;
 
 /**
- * Represents a Validation Error
+ * Represents a Validation Error.
  */
 class ValidationError
 {
@@ -16,7 +15,7 @@ class ValidationError
 
     /**
      * ValidationError constructor.
-     * @param string $message
+     *
      * @param mixed $value
      */
     public function __construct(string $message, $value)
@@ -26,8 +25,7 @@ class ValidationError
     }
 
     /**
-     * Returns the message of this validation error
-     * @return string
+     * Returns the message of this validation error.
      */
     public function getMessage(): string
     {
@@ -35,7 +33,8 @@ class ValidationError
     }
 
     /**
-     * Returns the value that was considered invalid
+     * Returns the value that was considered invalid.
+     *
      * @return mixed
      */
     public function getValue()

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Morebec\Validator\Rule;
-
 
 use Morebec\Validator\ValidationRuleInterface;
 
@@ -19,18 +17,18 @@ class IsString implements ValidationRuleInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function validate($v): bool
     {
-        return is_string($v);
+        return \is_string($v);
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getMessage($v): string
     {
-        return $this->message ?: "The value '$v' was expected to be a string";
+        return $this->message ?: "The value '{$v}' was expected to be a string";
     }
 }

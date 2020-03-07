@@ -2,11 +2,9 @@
 
 namespace Tests\Morebec\Validator\Rule;
 
-
 use Morebec\Validator\Rule\MaxLength;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-
 
 class MaxLengthTest extends TestCase
 {

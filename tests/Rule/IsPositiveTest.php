@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class IsPositiveTest extends TestCase
 {
-
     public function testValidate()
     {
         $rule = new IsPositive();

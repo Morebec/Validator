@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class CallbackTest extends TestCase
 {
-
     public function testValidate()
     {
         $rule = new Callback(static function ($v) {

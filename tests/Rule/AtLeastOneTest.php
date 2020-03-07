@@ -9,13 +9,12 @@ use PHPUnit\Framework\TestCase;
 
 class AtLeastOneTest extends TestCase
 {
-
     public function testValidate()
     {
         // A positive number or null
         $rule = new AtLeastOne([
             new IsPositive(),
-            new IsNull()
+            new IsNull(),
         ]);
 
         $this->assertTrue($rule->validate(1));

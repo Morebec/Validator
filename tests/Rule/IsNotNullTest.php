@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class IsNotNullTest extends TestCase
 {
-
     public function testValidate()
     {
         $rule = new IsNotNull();
