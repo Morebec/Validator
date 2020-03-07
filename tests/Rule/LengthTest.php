@@ -3,6 +3,7 @@
 namespace Tests\Morebec\Validator\Rule;
 
 
+use InvalidArgumentException;
 use Morebec\Validator\Rule\Length;
 use PHPUnit\Framework\TestCase;
 
@@ -15,5 +16,8 @@ class LengthTest extends TestCase
         $this->assertTrue($ruleFirst->validate("test"));
         $this->assertFalse($ruleFirst->validate("test message"));
         $this->assertEquals("Custom message",$ruleSecond->getMessage("test"));
+        $this->expectException(InvalidArgumentException::class);
+
+        $ruleThird = new Length(-1);
     }
 }
